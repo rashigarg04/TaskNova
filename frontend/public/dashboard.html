@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TaskNova - Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2 class="logo">TaskNova</h2>
+    <nav>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="analytics.html">Analytics</a>
+      <a href="settings.html">Settings</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h1>Dashboard</h1>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+      <div class="card stat">
+        <h3>Total Tasks</h3>
+        <p>120</p>
+      </div>
+
+      <div class="card stat">
+        <h3>Completed</h3>
+        <p>75</p>
+      </div>
+
+      <div class="card stat">
+        <h3>Pending</h3>
+        <p>45</p>
+      </div>
+
+      <div class="card stat">
+        <h3>Productivity</h3>
+        <p>62%</p>
+      </div>
+    </div>
+
+    <!-- Recent Tasks -->
+    <div class="card">
+      <h2>Recent Tasks</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Deadline</th>
+            <th>Status</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Prepare Presentation</td>
+            <td>Apr 9, 2024</td>
+            <td><span class="badge completed">Completed</span></td>
+            <td><span class="badge high">High</span></td>
+          </tr>
+          <tr>
+            <td>Client Meeting</td>
+            <td>Apr 8, 2024</td>
+            <td><span class="badge completed">Completed</span></td>
+            <td><span class="badge medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Market Research</td>
+            <td>Apr 5, 2024</td>
+            <td><span class="badge completed">Completed</span></td>
+            <td><span class="badge low">Low</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+<script src="../js/dashboard.js"></script>
+</html>

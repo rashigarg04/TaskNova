@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TaskNova - Analytics</title>
+  <link rel="stylesheet" href="../css/analytics.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2 class="logo">TaskNova</h2>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="analytics.html" class="active">Analytics</a>
+      <a href="settings.html">Settings</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <main class="content">
+    <h1>Analytics</h1>
+
+    <div class="grid">
+
+      <div class="card">
+        <h2>Task Status Overview</h2>
+        <canvas id="statusChart"></canvas>
+      </div>
+
+      <div class="card">
+        <h2>Priority Distribution</h2>
+        <canvas id="priorityChart"></canvas>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<script src="../js/analytics.js"></script>
+</body>
+</html>
