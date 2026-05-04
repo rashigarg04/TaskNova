@@ -1,0 +1,86 @@
+/* Notification Center Styles */
+.notification-dropdown {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    width: 320px;
+    background: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    z-index: 1001;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideDown 0.3s ease;
+}
+
+.notification-dropdown.active {
+    display: flex;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.notif-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notif-header h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.clear-all {
+    font-size: 12px;
+    color: var(--primary);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.notif-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.notif-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s;
+    cursor: default;
+}
+
+.notif-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.notif-item.unread {
+    border-left: 3px solid var(--primary);
+}
+
+.notif-item p {
+    margin: 0;
+    font-size: 13px;
+    color: #f8fafc;
+}
+
+.notif-item span {
+    font-size: 11px;
+    color: #94a3b8;
+    display: block;
+    margin-top: 5px;
+}
+
+.empty-notif {
+    padding: 30px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+}

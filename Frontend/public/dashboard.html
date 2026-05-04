@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TaskNova - Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/ai-chat.css">
+  <link rel="stylesheet" href="../css/notifications.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2 class="logo">TaskNova</h2>
+      <nav>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="settings.html">Settings</a>
+        <a id="notificationBell" href="#" class="notification-link">Notifications <span id="notificationCount"
+            class="count"></span></a>
+        <a href="logout.html">Logout</a>
+      </nav>
+
+      <div class="profile-section" id="sidebarProfile">
+        <div class="profile-avatar" id="sidebarAvatar">U</div>
+        <div class="profile-info">
+          <p class="profile-name" id="sidebarName">User Mode</p>
+          <p class="profile-email" id="sidebarEmail">Connecting...</p>
+        </div>
+      </div>
+    </aside>
+    <main class="content">
+      <h1>Dashboard</h1>
+      <div class="card">
+        <div class="search-filter-row">
+          <div class="search-box">
+            <input type="text" id="taskSearch" placeholder="Search tasks...">
+          </div>
+          <div class="filter-controls">
+            <select id="filterPriority">
+              <option value="all">All Priorities</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="card stat">
+          <h3>Total Tasks</h3>
+          <p id="totalTasks">0</p>
+        </div>
+        <div class="card stat">
+          <h3>Completed</h3>
+          <p id="completedTasks">0</p>
+        </div>
+        <div class="card stat">
+          <h3>Pending</h3>
+          <p id="pendingTasks">0</p>
+        </div>
+        <div class="card stat">
+          <h3>Productivity</h3>
+          <p id="productivity">0%</p>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Recent Tasks</h2>
+        <table id="taskTable">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Deadline</th>
+              <th>Priority</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="taskTableBody">
+            <!-- Tasks will be loaded here -->
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+
+  </div>
+  <script type="module" src="../js/auth-guard.js"></script>
+
+</body>
+<script type="module" src="../js/dashboard.js"></script>
+<script src="../js/ai-chat.js"></script>
+
+</html>

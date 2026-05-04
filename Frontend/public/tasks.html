@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TaskNova - Tasks</title>
+  <link rel="stylesheet" href="../css/tasks.css">
+  <link rel="stylesheet" href="../css/ai-chat.css">
+  <link rel="stylesheet" href="../css/notifications.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2 class="logo">TaskNova</h2>
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="tasks.html" class="active">Tasks</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="settings.html">Settings</a>
+        <a id="notificationBell" href="#" class="notification-link">Notifications <span id="notificationCount"
+            class="count"></span></a>
+        <a href="logout.html">Logout</a>
+      </nav>
+
+      <div class="profile-section" id="sidebarProfile">
+        <div class="profile-avatar" id="sidebarAvatar">U</div>
+        <div class="profile-info">
+          <p class="profile-name" id="sidebarName">User Mode</p>
+          <p class="profile-email" id="sidebarEmail">Connecting...</p>
+        </div>
+      </div>
+    </aside>
+    <main class="content">
+
+      <h1>Tasks</h1>
+      <div class="card">
+      <div class="search-filter-row">
+        <div class="search-box">
+          <input type="text" id="taskSearch" placeholder="Search tasks...">
+        </div>
+        <div class="filter-controls">
+          <select id="filterPriority">
+            <option value="all">All Priorities</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <select id="filterStatus">
+            <option value="all">All Status</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Add New Task</h2>
+        <div class="form">
+          <input type="text" id="taskTitle" placeholder="Task title">
+          <input type="date" id="taskDate">
+
+          <select id="taskPriority">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+          </select>
+
+          <button class="add-btn" id="addTaskBtn">+ Add Task</button>
+
+        </div>
+      </div>
+      <div class="card">
+        <h2>All Tasks</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Deadline</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>AI</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="taskTableBody"></tbody>
+
+        </table>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script type="module" src="../js/auth-guard.js"></script>
+
+  <script type="module" src="../js/tasks.js"></script>
+  <script src="../js/ai-chat.js"></script>
+</body>
+
+</html>

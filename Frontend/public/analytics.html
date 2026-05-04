@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TaskNova - Analytics</title>
+  <link rel="stylesheet" href="../css/analytics.css">
+  <link rel="stylesheet" href="../css/ai-chat.css">
+  <link rel="stylesheet" href="../css/notifications.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2 class="logo">TaskNova</h2>
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="analytics.html" class="active">Analytics</a>
+        <a href="settings.html">Settings</a>
+        <a id="notificationBell" href="#" class="notification-link">Notifications <span id="notificationCount"
+            class="count"></span></a>
+        <a href="logout.html">Logout</a>
+      </nav>
+
+      <div class="profile-section" id="sidebarProfile">
+        <div class="profile-avatar" id="sidebarAvatar">U</div>
+        <div class="profile-info">
+          <p class="profile-name" id="sidebarName">User Mode</p>
+          <p class="profile-email" id="sidebarEmail">Connecting...</p>
+        </div>
+      </div>
+    </aside>
+    <main class="content">
+      <h1>Analytics</h1>
+
+      <div class="grid">
+
+        <div class="card">
+          <h2>Task Status Overview</h2>
+          <canvas id="statusChart"></canvas>
+        </div>
+
+        <div class="card">
+          <h2>Priority Distribution</h2>
+          <canvas id="priorityChart"></canvas>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script type="module" src="../js/auth-guard.js"></script>
+
+  <script type="module" src="../js/analytics.js"></script>
+  <script src="../js/ai-chat.js"></script>
+</body>
+
+</html>

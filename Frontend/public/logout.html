@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TaskNova - Logout</title>
+  <link rel="stylesheet" href="../css/logout.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2 class="logo">TaskNova</h2>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="tasks.html">Tasks</a>
+      <a href="analytics.html">Analytics</a>
+      <a href="settings.html">Settings</a>
+      <a href="logout.html" class="active">Logout</a>
+    </nav>
+  
+    <div class="profile-section" id="sidebarProfile">
+      <div class="profile-avatar" id="sidebarAvatar">U</div>
+      <div class="profile-info">
+        <p class="profile-name" id="sidebarName">User Mode</p>
+        <p class="profile-email" id="sidebarEmail">Connecting...</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <div class="logout-card">
+      <h1>Are you sure?</h1>
+      <p>You are about to log out from TaskNova.</p>
+
+      <div class="buttons">
+        <button class="btn logout-btn" id="confirmLogout">Yes, Logout</button>
+        <button class="btn cancel-btn" id="cancelLogout">Cancel</button>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDNmiwSZM3f0_CdU6Kdz6ks-cYd6vFsKeE",
+    authDomain: "tasknova-32f44.firebaseapp.com",
+    projectId: "tasknova-32f44",
+    appId: "1:746811490235:web:aef8bf68a461634d5f4e9e",
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      window.location.href = "login.html";
+    } else {
+      const sidebarName = document.getElementById('sidebarName');
+      const sidebarEmail = document.getElementById('sidebarEmail');
+      const sidebarAvatar = document.getElementById('sidebarAvatar');
+      
+      if(sidebarName) sidebarName.textContent = user.displayName || "User";
+      if(sidebarEmail) sidebarEmail.textContent = user.email || "No email";
+      if(sidebarAvatar && user.email) sidebarAvatar.textContent = (user.displayName || user.email).charAt(0).toUpperCase();
+    }
+  });
+</script>
+
+<script type="module" src="../js/logout.js"></script>
+
+</body>
+</html>
